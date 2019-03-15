@@ -854,8 +854,10 @@ class googleimagesdownload:
                         raw_html = self.download_extended_page(url,arguments['chromedriver'])
 
                     if arguments['no_download']:
+                        True
                         #print("Starting to Print Image URLS")
                     else:
+                        True
                         #print("Starting Download...")
                     items,errorCount,abs_path = self._get_all_items(raw_html,main_directory,dir_name,limit,arguments)    #get all image items and download images
                     paths[pky + search_keyword[i] + sky] = abs_path
