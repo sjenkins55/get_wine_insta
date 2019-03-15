@@ -868,6 +868,7 @@ class googleimagesdownload:
                             if not os.path.exists("logs"):
                                 os.makedirs("logs")
                         except OSError as e:
+                            True
                             #print(e)
                         json_file = open("logs/"+search_keyword[i]+".json", "w")
                         json.dump(items, json_file, indent=4, sort_keys=True)
