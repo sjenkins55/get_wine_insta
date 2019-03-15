@@ -561,9 +561,10 @@ class googleimagesdownload:
     # Download Images
     def download_image(self,image_url,image_format,main_directory,dir_name,count,print_urls,socket_timeout,prefix,print_size,no_numbering,no_download):
         if print_urls or no_download:
-            print("Image URL: " + image_url)
+            True
+            #print("Image URL: " + image_url)
         if no_download:
-            return "success","Printed url without downloading",None,image_url
+            return image_url
         try:
             req = Request(image_url, headers={
                 "User-Agent": "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17"})
@@ -889,7 +890,7 @@ class googleimagesdownload:
                             self._get_all_items(new_raw_html, main_directory, search_term + " - " + key, limit,arguments)
 
                     i += 1
-                    print("\nErrors: " + str(errorCount) + "\n")
+                    #print("\nErrors: " + str(errorCount) + "\n")
         if arguments['print_paths']:
             print(paths)
         return paths
