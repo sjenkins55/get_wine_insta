@@ -830,8 +830,8 @@ class googleimagesdownload:
                 i = 0
                 while i < len(search_keyword):      # 2.for every main keyword
                     iteration = "\n" + "Item no.: " + str(i + 1) + " -->" + " Item name = " + str(pky) + str(search_keyword[i] + str(sky))
-                    print(iteration)
-                    print("Evaluating...")
+                    #print(iteration)
+                    #print("Evaluating...")
                     search_term = pky + search_keyword[i] + sky
 
                     if arguments['image_directory']:
@@ -853,9 +853,9 @@ class googleimagesdownload:
                         raw_html = self.download_extended_page(url,arguments['chromedriver'])
 
                     if arguments['no_download']:
-                        print("Starting to Print Image URLS")
+                        #print("Starting to Print Image URLS")
                     else:
-                        print("Starting Download...")
+                        #print("Starting Download...")
                     items,errorCount,abs_path = self._get_all_items(raw_html,main_directory,dir_name,limit,arguments)    #get all image items and download images
                     paths[pky + search_keyword[i] + sky] = abs_path
 
@@ -865,7 +865,7 @@ class googleimagesdownload:
                             if not os.path.exists("logs"):
                                 os.makedirs("logs")
                         except OSError as e:
-                            print(e)
+                            #print(e)
                         json_file = open("logs/"+search_keyword[i]+".json", "w")
                         json.dump(items, json_file, indent=4, sort_keys=True)
                         json_file.close()
